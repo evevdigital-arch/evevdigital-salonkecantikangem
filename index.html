@@ -73,10 +73,13 @@
 
     /* PAIN */
     .pain-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:34px}
-    .pain-item{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow-sm)}
-    .pain-item .ico{font-size:1.6rem;margin-bottom:10px}
-    .pain-item h3{font-size:1.08rem;color:var(--emerald);margin-bottom:6px}
-    .pain-item p{font-size:.92rem;color:var(--muted)}
+    .pain-item{position:relative;border:1px solid var(--line);border-radius:var(--radius);padding:30px 24px;box-shadow:var(--shadow-sm);overflow:hidden;min-height:300px;display:flex;flex-direction:column;justify-content:flex-end;background-size:cover;background-position:center;transition:transform .3s,box-shadow .3s}
+    .pain-item:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+    .pain-item::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(26,53,45,.9) 0%,rgba(26,53,45,.4) 50%,rgba(0,0,0,0) 100%);z-index:1;transition:background .3s}
+    .pain-item:hover::before{background:linear-gradient(to top,rgba(26,53,45,.95) 0%,rgba(26,53,45,.6) 50%,rgba(0,0,0,.1) 100%)}
+    .pain-item h3,.pain-item p{position:relative;z-index:2}
+    .pain-item h3{font-size:1.3rem;color:var(--gold-light);margin-bottom:8px}
+    .pain-item p{font-size:.96rem;color:rgba(255,255,255,.9)}
     .pain-note{font-family:'Fraunces',serif;font-size:1.35rem;color:var(--emerald);text-align:center;margin-top:30px}
 
     /* USP cards */
@@ -263,9 +266,9 @@
     </div>
     <div class="wrap">
       <div class="pain-grid">
-        <div class="pain-item reveal"><div class="ico">😣</div><h3>Jerawat Balik Lagi</h3><p>Sudah coba berbagai skincare, tapi jerawat selalu muncul kembali.</p></div>
-        <div class="pain-item reveal"><div class="ico">😔</div><h3>Wajah Kusam</h3><p>Kulit terlihat lelah padahal harus tampil maksimal di kampus &amp; kantor.</p></div>
-        <div class="pain-item reveal"><div class="ico">😟</div><h3>Bekas &amp; Bopeng</h3><p>Bekas jerawat dan tekstur tidak rata yang sulit hilang sendiri.</p></div>
+        <div class="pain-item reveal" style="background-image:url('assets/hero1.webp')"><h3>Jerawat Balik Lagi</h3><p>Sudah coba berbagai skincare, tapi jerawat selalu muncul kembali.</p></div>
+        <div class="pain-item reveal" style="background-image:url('assets/hero5.webp')"><h3>Wajah Kusam</h3><p>Kulit terlihat lelah padahal harus tampil maksimal di kampus &amp; kantor.</p></div>
+        <div class="pain-item reveal" style="background-image:url('assets/after.webp')"><h3>Bekas &amp; Bopeng</h3><p>Bekas jerawat dan tekstur tidak rata yang sulit hilang sendiri.</p></div>
       </div>
       <p class="pain-note">Kulit setiap orang unik. Saatnya hentikan trial-and-error.</p>
     </div>
